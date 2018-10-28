@@ -90,7 +90,8 @@ button{
 .col::before {
   display: block;
   content: "";
-  padding-bottom: 98%;
+  padding-bottom: 100%;
+// 사파리 줄 어긋나는 것 때문에 100%로 변경
 }
 
 .col-grid::before {

@@ -257,8 +257,8 @@ document.querySelector('.start-btn').addEventListener('click', e=> {
   player2El.textContent = player2(startPlayersEl.player2.value)
 })
 
-// 게임 종료 시 재시작 버튼 이벤트리스너
-document.querySelector('.restart-btn').addEventListener('click', e=> {
+// 리셋 버튼 이벤트리스너
+document.querySelector(".reset-btn").addEventListener("click", e => {
 
   boardState = [
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -277,19 +277,14 @@ document.querySelector('.restart-btn').addEventListener('click', e=> {
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
   ];
-
   currentStone = 1;
-
   drawBoard();
+  // 리셋버튼 눌렀을 때 current-turn이 player2였으면 계속 player2에 핑크표시되어있는거 고쳐서 추가한 코드
+  player1El.classList.add('current-turn')
+  player2El.classList.remove('current-turn')
 
-  winnerPage.classList.remove('winner1-act')
-  winnerPage.classList.remove('winner2-act')
-
-  startPlayersEl.player1.value = ''
-  startPlayersEl.player2.value = ''
-
-  startPage.classList.remove('start-act');
-})
+  startPage.classList.add('start-act');
+});
 
 
 // 리셋 버튼 이벤트리스너
